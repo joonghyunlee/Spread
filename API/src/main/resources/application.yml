@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  address: 127.0.0.1
+  tomcat:
+    uri-encoding: UTF-8
+
+logging:
+  level:
+    ROOT: WARN
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: spread-api
+    mvc.favicon.enabled: false
+    datasource:
+      tomcat:
+        min-idle: 0
+        max-idle: 110
+        max-active: 110
+        validation-query: SELECT 1
+        time-between-eviction-runs-millis: 30000
+        test-on-borrow: true
+        test-while-idle: true
+        min-evictable-idle-time-millis: -1
+        num-tests-per-eviction-run: 5
+        max-wait: 3000
